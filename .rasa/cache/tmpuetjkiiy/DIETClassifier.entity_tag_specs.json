@@ -1,0 +1,28 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-details",
+      "2": "I-details",
+      "3": "L-details",
+      "4": "U-details",
+      "5": "B-mood",
+      "6": "I-mood",
+      "7": "L-mood",
+      "8": "U-mood",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-details": 1,
+      "I-details": 2,
+      "L-details": 3,
+      "U-details": 4,
+      "B-mood": 5,
+      "I-mood": 6,
+      "L-mood": 7,
+      "U-mood": 8,
+      "O": 0
+    },
+    "num_tags": 9
+  }
+]

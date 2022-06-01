@@ -1,0 +1,77 @@
+version: "3.1"
+
+stories:
+
+# - story: greet path
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_great
+#   - action: utter_happy
+# # - action: action_hello_world
+
+# - story: sad path 1
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - intent: affirm
+#   - action: utter_happy
+
+# - story: sad path 2
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - intent: deny
+#   - action: utter_goodbye
+
+# - story: wellness check path
+#   steps:
+#   - intent: greet
+#   - intent: wellness_check
+#   - action: utter_wellness
+
+- story: welcome user
+  #conversation_start: true  # this rule only applies at the beginning of a conversation
+  steps:
+    - intent: greet_user
+    - action: utter_welcome
+    - intent: define_wellness
+    - action: validate_user_mood
+    - active_loop: validate_user_mood
+    - slot_was_set:
+      - requested_slot: user_mood
+    - active_loop: null
+    #- action: utter_happy #utter_great_news
+    - action: utter_more_deets
+    - intent: user_deny
+    - action: utter_goodbye
+
+- story: welcome user + details
+  #conversation_start: true  # this rule only applies at the beginning of a conversation
+  steps:
+    - intent: greet_user
+    - action: utter_welcome
+    - intent: define_wellness
+    - action: validate_user_mood
+    - active_loop: validate_user_mood
+    - slot_was_set:
+      - requested_slot: user_mood
+    - active_loop: null
+   # - action: utter_happy #utter_great_news
+    - action: utter_more_deets
+    - intent: user_affirm
+    - action: utter_listening
+    - intent: share_deets
+    - action: details_form
+    - active_loop: details_form
+    - slot_was_set:
+      - requested_slot: details
+    - active_loop: null
+    - action: utter_thinking
+    - action: utter_goodbye

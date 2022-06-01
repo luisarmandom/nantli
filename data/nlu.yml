@@ -1,0 +1,71 @@
+version: "3.1"
+
+nlu:
+- intent: greet_user
+  examples: |
+    - hola!
+    - qué tal?
+    - hi
+    - alo!
+    - hola
+
+- intent: goodbye
+  examples: |
+    - agur
+    - adiós
+    - hasta luego
+    - bye
+
+- intent: user_affirm
+  examples: |
+    - sí
+    - si
+    - y
+    - claro
+    - por su puesto
+
+- intent: user_deny
+  examples: |
+    - no
+    - n
+    - no, gracias
+    - nunca
+    - no creo
+    - no quiero eso
+    - no hay manera
+    - no realmente
+
+- intent: mood_great
+  examples: |
+    - perfecto
+    - súper bien
+    - excelente
+    - muy contento
+
+- intent: mood_unhappy
+  examples: |
+    - mi día fue malo
+    - estoy triste
+    - estoy decepcionado
+    - súper triste
+    - estoy muy triste
+    - triste
+
+- intent: bot_challenge
+  examples: |
+    - ¿eres un bot?
+    - eres un humano?
+    - hablo con un bot?
+    - hablo con un humano?
+
+- intent: define_wellness
+  examples: |
+    - me siento [feliz](mood) hoy.
+    - me siento [enojado](mood).
+    - estoy muy [molesta](mood)
+
+- intent: share_deets
+  examples: |
+    - lo que pasó [fue que me pagaron](details).
+    - ¡me [gané la lotería](details)! 
+    - es que [no hubo clases hoy](details).
